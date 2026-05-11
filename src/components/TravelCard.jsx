@@ -1,15 +1,16 @@
 import Image from "next/image";
 import { MapPin, Calendar } from "lucide-react";
+import Link from "next/link";
 
 export default function TravelCard({ travelInfo }) {
 
     return (
-        <div className="w-87.5 rounded-2xl overflow-hidden shadow-lg bg-white font-sans">
+        <div className=" rounded-2xl overflow-hidden shadow-lg bg-white font-sans">
             {/* Image Section */}
             <div className="relative">
                 <Image
                     src={travelInfo.imageUrl}
-                    alt={travelInfo.destinationName}
+                    alt='taj'
                     width={500}
                     height={300}
                     className="w-full h-55 object-cover"
@@ -47,9 +48,12 @@ export default function TravelCard({ travelInfo }) {
 
                 {/* Button */}
                 <div className="mt-4">
-                    <button className="w-full py-2 text-sm font-semibold text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition">
-                        BOOK NOW ↗
-                    </button>
+                    <Link href={`/destinations/${travelInfo._id}`}>
+                        <button className="w-full py-2 text-sm font-semibold text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition">
+                            BOOK NOW ↗
+                        </button>
+
+                    </Link>
                 </div>
             </div>
         </div>

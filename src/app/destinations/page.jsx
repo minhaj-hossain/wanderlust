@@ -8,12 +8,12 @@ const DestinationPage = async () => {
     // console.log(data)
 
     return (
-        <div>
+        <div className='container mx-auto'>
             <h3 className='font-bold text-xl py-4'>
                 Top Destination
             </h3>
 
-            <div>
+            <div className='grid grid-cols-3 gap-4'>
                 {
                     data.map(destination => <TravelCard key={destination._id} travelInfo={destination} />)
                 }
