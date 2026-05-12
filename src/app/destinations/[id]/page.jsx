@@ -12,6 +12,8 @@ import {
     ChevronRight,
     ArrowLeftCircle
 } from "lucide-react";
+import { EditModals } from "@/components/EditModals";
+import { DeleteButton } from "@/components/DeleteButton";
 
 
 const DestinationDetailsPage = async ({ params }) => {
@@ -41,12 +43,8 @@ const DestinationDetailsPage = async ({ params }) => {
                         Back to Destinations
                     </Button>
                     <div className="flex gap-3">
-                        <Button variant="bordered" startContent={<Edit3 size={18} />}>
-                            Edit
-                        </Button>
-                        <Button color="danger" variant="flat" startContent={<Trash2 size={18} />}>
-                            Cancel
-                        </Button>
+                        <EditModals travelDetails={travelDetails} />
+                        <DeleteButton travelDetails={travelDetails}  />
                     </div>
                 </div>
 
