@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { EditModals } from "@/components/EditModals";
 import { DeleteButton } from "@/components/DeleteButton";
+import BookingCard from "@/components/BookingCard";
 
 
 const DestinationDetailsPage = async ({ params }) => {
@@ -44,7 +45,7 @@ const DestinationDetailsPage = async ({ params }) => {
                     </Button>
                     <div className="flex gap-3">
                         <EditModals travelDetails={travelDetails} />
-                        <DeleteButton travelDetails={travelDetails}  />
+                        <DeleteButton travelDetails={travelDetails} />
                     </div>
                 </div>
 
@@ -113,42 +114,7 @@ const DestinationDetailsPage = async ({ params }) => {
 
                     {/* Right Sidebar - Booking Card */}
                     <div className="lg:col-span-1">
-                        <Card className="p-6 border-none shadow-xl bg-white sticky top-8">
-                            <div className="space-y-6">
-                                <div>
-                                    <p className="text-slate-500 text-sm mb-1">Starting from</p>
-                                    <div className="flex items-baseline gap-1">
-                                        <span className="text-4xl font-bold text-cyan-500">${travelDetails.price}</span>
-                                        <span className="text-slate-400 text-sm">per person</span>
-                                    </div>
-                                </div>
-
-                                <div className="bg-slate-50 p-4 rounded-xl border border-slate-100">
-                                    <span className="text-slate-700 font-medium">{travelDetails.departureDate}</span>
-                                </div>
-
-                                <Button
-                                    size="lg"
-                                    className="w-full bg-cyan-500 text-white font-semibold shadow-lg shadow-cyan-200"
-                                    endContent={<ChevronRight size={18} />}
-                                >
-                                    Book Now
-                                </Button>
-
-                                <div className="space-y-3 pt-2">
-                                    {[
-                                        "Free cancellation up to 7 days",
-                                        "Travel insurance included",
-                                        "24/7 customer support"
-                                    ].map((perk, i) => (
-                                        <div key={i} className="flex items-center gap-3 text-slate-600">
-                                            <Check size={16} className="text-green-500" strokeWidth={2.5} />
-                                            <span className="text-xs font-medium">{perk}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </Card>
+                        <BookingCard travelDetails={travelDetails} />
                     </div>
                 </div>
             </div>
